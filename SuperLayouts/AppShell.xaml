@@ -1,15 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Shell
     x:Class="SuperLayouts.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SuperLayouts"
+    xmlns:local="clr-namespace:SuperLayouts.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
 
+    <TabBar x:Name="MyTabBar">
+        <Tab Title="Home" Icon="home_icon.png">
+            <ShellContent Title="Tab 1" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+            <ShellContent Title="Tab 2" ContentTemplate="{DataTemplate local:SearchPage}" Route="SearchPage2" />
+            <ShellContent Title="Tab 3" ContentTemplate="{DataTemplate local:AccountPage}" Route="AccountPage3" />
+            
+        </Tab>
+        <Tab Title="Search" Icon="search_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" Route="SearchPage" />
+        </Tab>
+        <Tab Title="Account" Icon="account_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AccountPage}" Route="AccountPage" />
+        </Tab>
+
+    </TabBar>
+
+
+    <!--<ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Buscar"
+        ContentTemplate="{DataTemplate local:SearchPage}"
+        Route="SearchPage" />-->
 </Shell>
-

@@ -1,42 +1,87 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SuperLayouts.MainPage">
-			 
-    <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
+             x:Class="SuperLayouts.Views.MainPage"
+             xmlns:model="clr-namespace:SuperLayouts.Models"
+             xmlns:viewmodel="clr-namespace:SuperLayouts.ViewModels"
+             x:DataType="viewmodel:MainViewModel"
+             Title="{Binding Title}">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="2"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
 
-        </VerticalStackLayout>
-    </ScrollView>
- 
+        <CollectionView BackgroundColor="Transparent"
+                        Grid.ColumnSpan="2"
+                        SelectionMode="Single">
+
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type model:Restaurant}">
+                    <model:Restaurant
+                        Name="Tabtura"
+                        Image="https://s3-media1.fl.yelpcdn.com/bphoto/IQupoFLFO_uCHcrWSIGDaA/o.jpg"
+                        Address="Rua xv1" />
+                    <model:Restaurant
+                        Name="A Padaria"
+                        Image="https://media-cdn.tripadvisor.com/media/photo-s/0d/d9/ee/10/a-padaria-portuguesa.jpg"
+                        Address="Centro xpto" />
+                    <model:Restaurant
+                        Name="Shanked uc"
+                        Image="https://s3-media2.fl.yelpcdn.com/bphoto/G4ITO1hO1sF9HfeM6Is75A/o.jpg"
+                        Address="Rua 048 OWQL" />
+                    <model:Restaurant
+                        Name="Duque"
+                        Image="https://s3-media1.fl.yelpcdn.com/bphoto/pjr7ibFhZp-B8Wb29e6kog/o.jpg"
+                        Address="Rua 5 LPA" />
+                    <model:Restaurant
+                        Name="Lisboa Graça"
+                        Image="https://s3-media4.fl.yelpcdn.com/bphoto/wg1cg8MXwuSzTUggvc5gcA/o.jpg"
+                        Address="Rua Atalaia " />
+                    <model:Restaurant
+                        Name="Arco sec"
+                        Image="https://s3-media4.fl.yelpcdn.com/bphoto/FpRVXoxoqtkeF1zBcKH_cg/o.jpg"
+                        Address="Rua 3222" />
+                    <model:Restaurant
+                        Name="Camboma"
+                        Image="https://s3-media1.fl.yelpcdn.com/bphoto/tMrHyfk7CmvMtI4Z9UGCAw/o.jpg"
+                        Address="Rua 88388 IWN" />
+                </x:Array>
+            </CollectionView.ItemsSource>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Restaurant">
+                    <Grid Padding="2">
+                        <Frame HeightRequest="130"
+                               Padding="0"
+                               CornerRadius="5"
+                               Style="{StaticResource CardView}"  >
+                            <Grid Padding="0"
+                                  RowDefinitions="*,*"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="Center"
+                                  VerticalOptions="End">
+                                <Image Source="{Binding Image}" Grid.Row="0"
+                                       Aspect="AspectFill"
+                                       HeightRequest="80"
+                                       VerticalOptions="Start"
+                                       
+                                       />
+                                <VerticalStackLayout Grid.Row="1"
+                                                     Padding="4"
+                                                     VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                           Style="{StaticResource MediumLabel}" />
+                                    <Label Text="{Binding Address}" FontSize="10"
+                                           Style="{StaticResource SmallLabel}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>
-

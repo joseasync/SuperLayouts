@@ -1,4 +1,28 @@
 ﻿<Properties StartupConfiguration="{66B4680F-AD86-4CDC-8A20-01DAA4640C2B}|Default">
-  <MonoDevelop.Ide.ItemProperties.SuperLayouts FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppShell.xaml">
+    <Files>
+      <File FileName="AppShell.xaml" Line="13" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SuperLayouts.App" expanded="True">
+            <Node name="SuperLayouts" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4a_API_32" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="12.3.99.58.58" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SuperLayouts PreferredExecutionTarget="Android.Pixel_4a_API_32" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,4 +1,6 @@
-﻿namespace SuperLayouts;
+﻿using SuperLayouts.ViewModels;
+
+namespace SuperLayouts;
 
 public static class MauiProgram
 {
@@ -12,6 +14,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services.AddSingleton<MainViewModel>();
+		builder.Services.AddSingleton<Views.MainPage>();
 
 		return builder.Build();
 	}

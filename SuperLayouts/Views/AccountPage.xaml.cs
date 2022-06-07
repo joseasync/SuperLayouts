@@ -1,9 +1,9 @@
 ﻿using System;
 namespace SuperLayouts.Views
 {
-	public partial class Account
+	public partial class AccountPage
 	{
-		public Account()
+		public AccountPage()
 		{
 			InitializeComponent();
 		}
